@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoSpecs - Catalogo Tecnico</title>
+
+    <!-- 1. Cargar Google Fonts -->
+    <link rel="preconnect" hrfe="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- 2. Cargar Boostrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- 3. Cargar Estilos Propios-->
+    <link rel="stylesheet" href="css/custom.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+            <div class="container">
+                <a class="navbar-brand fw-bold" href="index.html">⚙️ AutoSpecs</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Links de Navegacion-->
+
+                <div class="collapse navbar-collapse" id="navbarContent">
+                    <ul class="navbar-nav ms-auto me-3 mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="index.html">Catálogo</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contacto.html">Contacto</a>
+                        </li>
+                    </ul>
+                    <!-- Boton de Modo Oscuro/Claro controlado por js-->
+                    <button id="btn-theme-toggle" class="btn btn-outline-light btn-sm" type="button">🌙 Modo Oscuro</button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- MAIN: Todo el contenido de la pag principal-->
+    <main class="container my-4">
+
+        <!-- HERO SECTION: Presentacion de la pagina-->
+        <section class="hero-section text-center py-5 px-3 rounded mb-4">
+            <h1 class="display-5 fw-bold">Fichas Tecnicas & Espicificaciones</h1>
+            <p class="lead col-lg-8 mx-auto">Explora configuraciones mecanicas, sistemas de inyeccion y componentes de alto rendimiento.</p>
+        </section>
+
+        <!-- Busqueda y Filtros-->
+        <section class="mb-4" aria-label="Filtros del Catalogo">
+            <div class="row g-3">
+                <!-- Input de texto para buscar-->
+                <div class="col-12 col-md-8">
+                    <label for="input-search" class="visually-hidden">Buscar Componente</label>
+                    <input type="text" id="input-search" class="form-control" placeholder="Buscar por nombre o descripcion...">
+                </div>
+                <!-- Selector de Categoria-->
+                <div class="col-12 col-md-4">
+                    <label for="select-category" class="visually-hidden">Filtrar por categoria</label>
+                    <select id="select-category" class="form-select">
+                        <option value="todos">Todas las categorias</option>
+                        <option value="motor">Motorizacion</option>
+                        <option value="transmision">Transmision</option>
+                        <option value="electronica">Electronica</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+
+        <!-- Grilla de Productos
+            'row g-4': Define una fila con espacio (gap) de nivel 4 entre columnas.-->
+        
+        <section class="row g.4" id="catalog-container">
+            <!-- Item 1-->
+            <article class="col-12 col-md-6 col-lg-4 catalog-item" data-category="motor">
+                <div class="card h-100 shadow-sm">
+                    <img src="https://encrypted-tbn2.gstatic.com/licensed-image?q=tbn:ANd9GcRRmyhKL5V6oFM3E9VLtdX6ZqIkGs_9MryrT6tJ3Un_nY5PbBReyOzEbyDnDdrHP7GrizktAZKrql6pRZs" class="card-img-top" alt="Motor 1.8T AUQ">
+                    <div class="card-body d-flex flex-column">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="badge bg-danger">Motorización</span>
+                            <small class="text-muted">1.8L Turbo</small>
+                        </div>
+                        <h2 class="h5 card-title fw-bold">Motor 1.8T 20V (AUQ)</h2>
+                        <p class="card-text">Bloque de 4 cilindros turbo de 20V con excelente margen para preparación técnica.</p>
+                        <div class="mt-auto pt-3">
+                            <button class="btn btn-outline-primary w-100 btn-detail" data-bs-toggle="modal" data-bs-target="#detailModal" data-title="Motor 1.8T 20V (AUQ)" data-desc="Entrega 180 HP de fábrica. Cuenta con bloque de hierro, pistones de aleación y culata de 5 válvulas por cilindro. Excelente soporte para turbos de mayor flujo.">Ver Ficha Completa</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <!-- Item 2-->
+            <article class="col-12 col-md-6 col-lg-4 catalog-item" data-category="transmision">
+                <div class="card h-100 shadow-sm">
+                    <img src="https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcTiKmaazjOUu-HWNU4sQzBJGofR0kDR7vadUx4TSX4Xp3SfSOfO3clQi3LphBsw7_U0ap7vyYloUF8ZSD4" class="card-img-top" alt="Caja de Cambios 02J">
+                    <div class="card-body d-flex flex-column">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="badge bg-primary">Transmisión</span>
+                            <small class="text-muted">5 Velocidades</small>
+                        </div>
+                        <h2 class="h5 card-title fw-bold">Transmisión Manual 02J</h2>
+                        <p class="card-text">Transmisión manual de 5 marchas, conocida por su durabilidad en configuraciones urbanas y trackday.</p>
+                        <div class="mt-auto pt-3">
+                            <button class="btn btn-outline-primary w-100 btn-detail" data-bs-toggle="modal" data-bs-target="#detailModal" data-title="Transmisión Manual 02J" data-desc="Transmisión por cable de accionamiento mecánico, diferencial abierto estándar y carcasa reforzada. Soporta torque considerable con embragues cerámicos.">Ver Ficha Completa</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <!-- Item 3-->
+            <article class="col-12 col-md-6 col-lg-4 catalog-item" data-category="electronica">
+                <div class="card h-100 shadow-sm">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQrafVCgbwK09YNpSKLtF-zC-iKse58cr1OLx6uJ1w9RfdtfPpTN2M675Y&s=10" class="card-img-top" alt="FuelTech FT450">
+                    <div class="card-body d-flex flex-column">
+                        <div class="d-flex justify-content-between align-items-center mb-2">
+                            <span class="badge bg-warning text-dark">Electrónica</span>
+                            <small class="text-muted">ECU Standalone</small>
+                        </div>
+                        <h2 class="h5 card-title fw-bold">FuelTech FT450</h2>
+                        <p class="card-text">Inyección programable con pantalla táctil integrada, datalogger y control total de motor.</p>
+                        <div class="mt-auto pt-3">
+                            <button class="btn btn-outline-primary w-100 btn-detail" data-bs-toggle="modal" data-bs-target="#detailModal" data-title="FuelTech FT450" data-desc="Permite inyección secuencial, encendido por chispa perdida o bobinas independientes, lectura de mapas en tiempo real e interconexión mediante red CAN.">Ver Ficha Completa</button>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <!-- Modal de boostrap (pop-up con informacion tecnica)-->
+    <div class="modal fade" id="detailModal" tabindex="-1" aria-labelledby="detailModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3 class="modal-tittle h5 fw-bold" id="detailModalLabel">Epecificación Técnica</h3>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+                </div>
+                <div class="modal-body" id="modal-body-text">
+                    Cargando datos...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer: Pie de pagina-->
+    <footer class="bg-dark text-white text-center py-3 mt-auto">
+        <div class="container">
+            <p class="mb-0">&copy; 2026 AutoSpecs - Proyecto Modulo 1 IPSS</p>
+        </div>
+    </footer>
+
+    <!-- Carga del JS de Boostrap-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Archivo js propio-->
+    <script src="js/main.js"></script>
+</body>
+</html>

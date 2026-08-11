@@ -1,0 +1,60 @@
+/* 1. VARIABLES CSS EN :root (Modo Claro por Defecto) */
+:root {
+    --primary-color: #0d6efd;
+    --bg-main: #f8f9fa;
+    --bg-card: #ffffff;
+    --text-color: #212529;
+    --border-color: #dee2e6;
+    --hero-bg: #e9ecef;
+}
+
+/* 2. REDEFINICIÓN DE VARIABLES PARA MODO OSCURO */
+/* Cuando JavaScript agregue la clase 'dark-mode' al <body>, estos valores reemplazan los de arriba automáticamente */
+body.dark-mode {
+    --primary-color: #3d8bfd;
+    --bg-main: #121212;
+    --bg-card: #1e1e1e;
+    --text-color: #f8f9fa;
+    --border-color: #2d3748;
+    --hero-bg: #1a202c;
+}
+
+/* 3. ESTILOS GENERALES (Mobile First) */
+body {
+    background-color: var(--bg-main);
+    color: var(--text-color);
+    font-family: 'Roboto', system-ui, -apple-system, sans-serif; /* Tipografía personalizada de Google Fonts */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave al cambiar de tema */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1; /* Hace que el footer siempre quede pegado abajo aunque haya poco contenido */
+}
+
+/* 4. PERSONALIZACIÓN DE COMPONENTES DE BOOTSTRAP */
+.hero-section {
+    background-color: var(--hero-bg);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.card {
+    background-color: var(--bg-card);
+    color: var(--text-color);
+    border-color: var(--border-color);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Efecto Hover en las Cards para dar sensación de interactividad */
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15) !important;
+}
+
+.modal-content {
+    background-color: var(--bg-card);
+    color: var(--text-color);
+    border-color: var(--border-color);
+}
