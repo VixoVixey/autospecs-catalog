@@ -11,10 +11,11 @@
 Plataforma y catálogo web de especificaciones técnicas automotrices: permite consultar fichas detalladas, configuraciones mecánicas y componentes de alto rendimiento (como motores 1.8T, transmisiones manuales y sistemas de inyección programable Standalone), ofreciendo búsqueda interactiva, filtrado por categorías y tematización en modo oscuro.
 
 ## Vista del proyecto 
-Aqui se Muestra el home de la pagina con el Catalogo.
+### Vista Principal (Home)
+
 ![Vista del Home](./img/Home.png)
 
-Aqui se muestra la pagina de contacto.
+### Vista de Contacto
 ![Vista del Contacto](./img/Contacto.png)
 
 ## Páginas
