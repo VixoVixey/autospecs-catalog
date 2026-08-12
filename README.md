@@ -13,10 +13,10 @@ Plataforma y catálogo web de especificaciones técnicas automotrices: permite c
 ## Vista del proyecto 
 ### Vista Principal (Home)
 
-![Vista del Home](./img/Home.png)
+![Vista del Home](./img/Home.PNG)
 
 ### Vista de Contacto
-![Vista del Contacto](./img/Contacto.png)
+![Vista del Contacto](./img/Contacto.PNG)
 
 ## Páginas
 
