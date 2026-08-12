@@ -73,16 +73,22 @@
                             </select>
                             <div class="invalid-feedback">Por favor escribe tu consulta.</div>
                         </div>
+                        
+                        <!-- Campo de explicación de consulta-->
+                        <div class="mb-3">
+                            <label for="mensaje" class="form-label fw-semibold">Detalle de la Consulta</label>
+                            <textarea class="form-control" id="mensaje" rows="4" placeholder="Escribe aquí los detalles de tu duda..." required></textarea>
+                            <div class="invalid-feedback">Por favor escribe el detalle de tu mensaje.</div>
+                        </div>
 
-                        <!-- Boton Enviar -->
-                        <button type="submit" class="btn btn-primary w-100 fw-bold">Enviar Consulta</button>
+                        <!-- Botón de Envío -->
+                        <button type="submit" class="btn btn-primary w-100 fw-bold py-2">Enviar Consulta</button>
+
+                        <!-- Mensaje de Éxito -->
+                        <div id="alert-success" class="alert alert-success mt-3 text-center d-none" role="alert">
+                            ¡Gracias por tu mensaje! Tu consulta ha sido enviada con éxito.
+                        </div>
                     </form>
-
-                    <!-- Alerta de Exito Dinamica -->
-                    <div id="alert-succes" class="alert alert-succes mt-4 d-none mb-0" role="alert">
-                        ✓ ¡Mensaje enviado con éxito! Te responderemos a la brevedad.
-                    </div>
-
                 </section>
 
             </div>
