@@ -1,6 +1,7 @@
 // 1. IMPORTACIONES (Siempre al inicio del archivo)
 import { initThemeToggle } from './storage.js';
 import { fetchProductos } from './api.js';
+import { initFilters } from './filtro.js';
 
 /**
  * Crea una tarjeta individual del catálogo de forma segura contra XSS.
@@ -22,7 +23,7 @@ function crearCardProducto(item) {
   img.src = item.thumbnail;
   img.alt = item.title;
   img.loading = 'lazy';
-  // object-fit: contain asegura que la imagen NUNCA se recorte
+  // object-fit: contain asegura que la imagen no se deforme
   img.style.objectFit = 'contain';
   img.style.maxHeight = '100%';
   img.style.maxWidth = '100%';
@@ -129,6 +130,9 @@ async function renderCatalogo() {
   productos.forEach(prod => {
     container.appendChild(crearCardProducto(prod));
   });
+
+  // E3: Inicializar los eventos de búsqueda y filtros una vez que las tarjetas existen en el DOM
+  initFilters();
 }
 
 // 2. INICIALIZACIÓN DE LA APLICACIÓN
@@ -138,7 +142,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // E4: Modo oscuro persistente
   initThemeToggle('btn-theme-toggle');
 
-  // E2: Cargar y renderizar catálogo desde la API
+  // E2 + E3: Cargar catálogo desde API e inicializar filtros
   renderCatalogo();
 
   // 3. DATOS DINÁMICOS PARA EL MODAL DE BOOTSTRAP
