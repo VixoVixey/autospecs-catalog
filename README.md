@@ -86,3 +86,8 @@ autospecs-catalog/
 - **Google Fonts:** Tipografía personalizada (*Roboto*).
 - **Vanilla JavaScript:** Control total del DOM y manejo de eventos sin frameworks externos.
 - **LocalStorage API:** Almacenamiento local de preferencias de interfaz.
+
+## Decisiones Técnicas
+* **Consumo de API:** Se utilizó DummyJSON para simular especificaciones y componentes vehiculares, implementando normalización de datos y manejo de errores mediante `try/catch`.
+* **Seguridad (Prevención de XSS):** El renderizado dinámico se realiza mediante manipulación nativa de nodos (`document.createElement` y `textContent`), evitando la inyección de HTML no saneado.
+* **Modularidad:** Se adoptó una arquitectura basada en ES Modules separando responsabilidades por dominio (`api.js`, `filtro.js`, `storage.js`).
