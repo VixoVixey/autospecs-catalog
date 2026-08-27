@@ -58,3 +58,13 @@ main {
     color: var(--text-color);
     border-color: var(--border-color);
 }
+
+/* Integración estética del contenedor de imágenes en modo oscuro */
+body.dark-mode .ratio {
+    background-color: #1e1e1e !important;
+}
+
+body.dark-mode .card {
+    background-color: #2b2b2b !important;
+    color: #f8f9fa;
+}
